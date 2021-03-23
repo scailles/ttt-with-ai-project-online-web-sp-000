@@ -51,9 +51,15 @@ class Game
   
   
   def turn
-    puts "Please enter a number 1-9."
-   @input = current_player.move(@board)
-    
-  end
+    puts "Please enter a number 1-9:"
+   input = current_player.move(board)
+   if board.valid_move?(input)
+     board.update
+     board.turn_count
+   end
+   
+ end
+ 
+
   
 end
