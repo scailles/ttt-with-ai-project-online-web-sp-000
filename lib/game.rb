@@ -1,6 +1,9 @@
+require 'pry'
+
+
 class Game
   
-  attr_accessor :board, :player_1, :player_2, :input
+  attr_accessor :board, :player_1, :player_2, :user_input
   
   WIN_COMBINATIONS =   [
   [0, 1, 2],
@@ -21,7 +24,7 @@ class Game
     @player_2=player_2
     @board=board
   end
-  
+  binding.pry
   
   def current_player
     board.turn_count.even?  ? player_1 : player_2
@@ -51,15 +54,22 @@ class Game
   
   
   def turn
-    puts "Please enter a number 1-9:"
-   input = current_player.move(board)
-   if board.valid_move?(input)
-     board.update
-     board.turn_count
-   end
-   
- end
+  board.turn_count==1
+  puts "Please enter a number between 1-9."
+  
+  input = current_player.move.to_i
+end
+  
+    
+
  
+ 
+ 
+  def play 
+    
+    
+    
+  end
 
   
 end
