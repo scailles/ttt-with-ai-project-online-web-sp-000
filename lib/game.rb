@@ -68,7 +68,7 @@ end
  
  
   def play 
-    
+    puts "Please enter a number between 1-9."
     
     
   end
