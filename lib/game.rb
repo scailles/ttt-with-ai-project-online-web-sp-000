@@ -54,13 +54,17 @@ class Game
   end
   
   
-  def turn
-    input=gets.strip
-  board.turn_count==1
-  puts "Please enter a number between 1-9."
-  
-  input = current_player.move.to_i
-end
+ def turn
+    puts "Please enter a number 1-9:"
+    @user_input = current_player.move(@board)
+    if @board.valid_move?(@user_input)
+      @board.update(@user_input, current_player)
+    else puts "Please enter a number 1-9:"
+      @board.display
+      turn
+    end
+    @board.display
+  end
   
     
 
