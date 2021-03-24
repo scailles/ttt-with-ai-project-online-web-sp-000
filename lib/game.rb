@@ -25,7 +25,7 @@ class Game
     @board=board
     @board.display
   end
-  binding.pry
+  
   
   def current_player
     board.turn_count.even?  ? player_1 : player_2
