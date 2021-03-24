@@ -55,6 +55,7 @@ class Game
   
   
   def turn
+    input=gets.strip
   board.turn_count==1
   puts "Please enter a number between 1-9."
   
